@@ -140,6 +140,7 @@ const translations = {
     cookie_link: "Privātuma politikai",
     cookie_more: "Uzzināt vairāk",
     cookie_accept: "Piekrītu",
+    cookie_reject: "Noraidīt visu",
     // Footer
     footer_desc: "Profesionāla personāla atlase un darbinieku noma Latvijā un Eiropā.",
     footer_nav: "Navigācija",
@@ -282,6 +283,7 @@ const translations = {
     cookie_link: "Privacy Policy",
     cookie_more: "Learn more",
     cookie_accept: "Accept",
+    cookie_reject: "Reject all",
     footer_desc: "Professional recruitment and staff leasing in Latvia and Europe.",
     footer_nav: "Navigation",
     footer_services: "Services",
@@ -423,6 +425,7 @@ const translations = {
     cookie_link: "Политикой конфиденциальности",
     cookie_more: "Подробнее",
     cookie_accept: "Принять",
+    cookie_reject: "Отклонить всё",
     footer_desc: "Профессиональный подбор и аренда персонала в Латвии и Европе.",
     footer_nav: "Навигация",
     footer_services: "Услуги",

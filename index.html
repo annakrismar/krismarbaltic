@@ -490,19 +490,24 @@
 <!-- ═══ COOKIE CONSENT POPUP ═══ -->
 <div class="cookie-overlay" id="cookieOverlay">
   <div class="cookie-popup">
-    <div class="cookie-popup__logo">
-      <img src="logo.png" alt="Krismar Baltic" style="height:48px;" />
-    </div>
-    <div class="cookie-popup__icon">🍪</div>
-    <h2 class="cookie-popup__title" data-i18n="cookie_title">Privātums un sīkdatnes</h2>
+    <h2 class="cookie-popup__title" data-i18n="cookie_title">PRIVĀTUMS UN SĪKDATNES</h2>
     <p class="cookie-popup__text" data-i18n="cookie_text">Mēs apstrādājam Jūsu datus, lai nodrošinātu vietnes darbību un apstrādātu pieteikumus. Turpinot lietot vietni, Jūs piekrītat mūsu Privātuma politikai.</p>
-    <p class="cookie-popup__text" style="font-size:.82rem;margin-top:-10px;">
-      <a href="privacy.html" target="_blank" style="color:var(--gold);text-decoration:underline;" data-i18n="cookie_more">Uzzināt vairāk</a>
-    </p>
     <div class="cookie-popup__actions">
-      <button class="cookie-btn cookie-btn--accept" onclick="(function(){localStorage.setItem('cookieAccepted','1');var o=document.getElementById('cookieOverlay');o.classList.add('hidden');setTimeout(function(){o.style.display='none'},500);})()" data-i18n="cookie_accept">Piekrītu</button>
+      <button class="cookie-bar cookie-bar--accept"
+        onclick="(function(){localStorage.setItem('cookieAccepted','1');var o=document.getElementById('cookieOverlay');o.classList.add('hidden');setTimeout(function(){o.style.display='none'},500);})()">
+        <span data-i18n="cookie_accept">PIEKRĪTU</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="cookie-bar cookie-bar--reject"
+        onclick="(function(){localStorage.setItem('cookieAccepted','1');var o=document.getElementById('cookieOverlay');o.classList.add('hidden');setTimeout(function(){o.style.display='none'},500);})()">
+        <span data-i18n="cookie_reject">NORAIDĪT VISU</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
-    <p class="cookie-popup__note">SIA Krismar Baltic · Reģ. Nr. 40203640978</p>
+    <div class="cookie-popup__footer">
+      <a href="privacy.html" target="_blank" data-i18n="cookie_more">Privātuma politika</a>
+      <span>SIA Krismar Baltic · 40203640978</span>
+    </div>
   </div>
 </div>
 
