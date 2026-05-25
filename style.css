@@ -19,6 +19,7 @@
   --shadow: 0 4px 24px rgba(27,45,91,.10);
   --shadow-lg: 0 12px 48px rgba(27,45,91,.18);
   --transition: .3s cubic-bezier(.4,0,.2,1);
+  --vh: 1vh; /* iOS Safari 100vh fix — set by JS */
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -29,11 +30,36 @@ body {
   background: var(--white);
   overflow-x: hidden;
   line-height: 1.65;
+  /* iOS Safari: kill blue tap highlight globally */
+  -webkit-tap-highlight-color: transparent;
+  /* Prevent text size adjust on orientation change (iOS) */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Better touch targets & no double-tap zoom on all interactive elements */
+a, button, [role="button"] {
+  touch-action: manipulation;
 }
 
 a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+
+/* Images never overflow their container */
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
 ul { list-style: none; }
+
+/* All buttons inherit the site font (Safari/Firefox reset) */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
 
 /* ═══════════════════════════════════════════
    CONTAINER
@@ -101,6 +127,7 @@ ul { list-style: none; }
 }
 .section-label--light { color: var(--gold2); }
 .section-title {
+  font-size: 1.75rem; /* fallback for browsers without clamp() */
   font-size: clamp(1.75rem, 3.5vw, 2.4rem);
   font-weight: 800;
   color: var(--navy2);
@@ -252,21 +279,29 @@ ul { list-style: none; }
 ═══════════════════════════════════════════ */
 .hero {
   position: relative;
+  /* iOS Safari 100vh fix: use --vh set by JS, fallback to 100vh */
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   background: var(--navy2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
   overflow: hidden;
   padding-top: 90px;
 }
 .hero__bg {
   position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   pointer-events: none;
 }
 /* Фото-фон Hero */
 .hero__photo-bg {
   position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80');
   background-size: cover;
@@ -276,6 +311,7 @@ ul { list-style: none; }
 /* Градиентный оверлей поверх фото */
 .hero__overlay {
   position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   background: linear-gradient(
     110deg,
@@ -301,6 +337,7 @@ ul { list-style: none; }
 }
 .hero__particles {
   position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
 }
 .hero__inner {
@@ -337,12 +374,14 @@ ul { list-style: none; }
   line-height: 1.1;
 }
 .hero__title-main {
+  font-size: 2.6rem;
   font-size: clamp(2.6rem, 5.5vw, 4rem);
   font-weight: 900;
   color: var(--white);
   letter-spacing: -.02em;
 }
 .hero__title-sub {
+  font-size: 1.3rem;
   font-size: clamp(1.3rem, 2.8vw, 2rem);
   font-weight: 400;
   color: rgba(255,255,255,.65);
@@ -458,6 +497,7 @@ ul { list-style: none; }
 }
 .about__img-bg {
   position: absolute;
+  top: 24px; right: 0; bottom: 0; left: 24px;
   inset: 24px 0 0 24px;
   background: linear-gradient(135deg, var(--navy), var(--blue));
   border-radius: 24px;
@@ -465,6 +505,7 @@ ul { list-style: none; }
 }
 .about__img-content {
   position: absolute;
+  top: 0; right: 24px; bottom: 24px; left: 0;
   inset: 0 24px 24px 0;
   border-radius: 24px;
   overflow: hidden;
@@ -486,6 +527,7 @@ ul { list-style: none; }
 .about__img-content:hover .about__photo { transform: scale(1.04); }
 .about__img-overlay {
   position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   background: linear-gradient(
     to top,
@@ -866,11 +908,17 @@ ul { list-style: none; }
   border: 1.5px solid #dce3f0;
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
-  font-size: .9rem;
+  /* iOS Safari: font-size must be >= 16px to prevent auto-zoom on focus */
+  font-size: 16px;
   color: var(--text);
   transition: var(--transition);
   background: var(--white);
   outline: none;
+  /* iOS Safari: remove default input styling */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Prevent callout menu on long press */
+  -webkit-touch-callout: none;
 }
 .form-group input:focus,
 .form-group select:focus,
@@ -1122,6 +1170,7 @@ ul { list-style: none; }
 /* ── Cookie Consent Popup ── */
 .cookie-overlay {
   position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
   background: rgba(10,14,30,.88);
   -webkit-backdrop-filter: blur(4px);

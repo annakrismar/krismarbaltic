@@ -1,3 +1,20 @@
+/* ── iOS Safari 100vh fix ──
+   Safari's 100vh includes the browser chrome (address bar) which causes
+   content to be clipped. We calculate the real viewport height and store
+   it in --vh CSS variable used by .hero { min-height: calc(var(--vh)*100) }
+── */
+(function() {
+  function setVH() {
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  }
+  setVH();
+  window.addEventListener('resize', setVH);
+  window.addEventListener('orientationchange', function() {
+    setTimeout(setVH, 150); // wait for browser chrome to resize
+  });
+})();
+
 /* ── Safe localStorage wrapper (Safari private mode, WebView) ── */
 var store = (function() {
   try {
