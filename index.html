@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIA Krismar Baltic — Personāla atlase un noma</title>
+  <meta name="description" content="SIA Krismar Baltic — profesionāla personāla atlase, darbinieku noma un darba meklēšanas pakalpojumi Latvijā." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#hero" class="logo">
+      <img src="logo.png" alt="Krismar Baltic" class="logo__img" id="logoImg"
+           onerror="this.style.display='none'; document.getElementById('logoText').style.display='flex';" />
+      <span class="logo__text" id="logoText" style="display:none;">
+        <span class="logo__k">KB</span>
+        <span class="logo__name">Krismar Baltic</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#about"    class="nav__link" data-i18n="nav_about">Par mums</a>
+      <a href="#services" class="nav__link" data-i18n="nav_services">Pakalpojumi</a>
+      <a href="#benefits" class="nav__link" data-i18n="nav_benefits">Priekšrocības</a>
+      <a href="#process"  class="nav__link" data-i18n="nav_process">Process</a>
+      <a href="#contact"  class="nav__link nav__link--cta" data-i18n="nav_contact">Sazināties</a>
+    </nav>
+
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="lv">LV</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <div class="hero__photo-bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__shape hero__shape--1"></div>
+    <div class="hero__shape hero__shape--2"></div>
+    <div class="hero__particles" id="particles"></div>
+  </div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <h1 class="hero__title">
+        <span class="hero__title-main" data-i18n="hero_title">Profesionāli darbinieki</span>
+        <span class="hero__title-sub" data-i18n="hero_title_accent">Jūsu biznesam</span>
+      </h1>
+      <p class="hero__sub" data-i18n="hero_sub">
+        SIA <strong>Krismar Baltic</strong> nodrošina profesionālu personāla atlasi un darbinieku nomu, kas atbilst Jūsu uzņēmuma prasībām.
+      </p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary" data-i18n="hero_cta1">Pieteikties konsultācijai</a>
+        <a href="#services" class="btn btn--outline" data-i18n="hero_cta2">Mūsu pakalpojumi</a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__card hero__card--main">
+        <div class="hero__card-icon">🎯</div>
+        <div>
+          <strong data-i18n="card_title1">Mērķtiecīga atlase</strong>
+          <span data-i18n="card_sub1">Katram amatam — īstais speciālists</span>
+        </div>
+      </div>
+      <div class="hero__card hero__card--sm hero__card--top">
+        <div class="hero__card-icon">💼</div>
+        <div>
+          <strong data-i18n="card_title2">Elastīga noma</strong>
+          <span data-i18n="card_sub2">Personāls Jūsu tempā</span>
+        </div>
+      </div>
+      <div class="hero__card hero__card--sm hero__card--bot">
+        <div class="hero__card-icon">🌐</div>
+        <div>
+          <strong data-i18n="card_title3">Bez robežām</strong>
+          <span data-i18n="card_sub3">Partneri 10+ valstīs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="hero__scroll">
+    <span></span>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════ -->
+<section class="about section" id="about">
+  <div class="container about__inner">
+    <div class="about__media">
+      <div class="about__img-wrap">
+        <div class="about__img-bg"></div>
+        <div class="about__img-content">
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80"
+            alt="Krismar Baltic — персонал команда"
+            class="about__photo"
+            loading="lazy"
+          />
+          <div class="about__img-overlay"></div>
+          <div class="about__experience">
+            <strong>10+</strong>
+            <span data-i18n="about_exp">gadu pieredzē</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about__text">
+      <div class="section-label" data-i18n="about_label">Par mums</div>
+      <h2 class="section-title" data-i18n="about_title">Profesionāli darbinieki — Jūsu uzņēmuma pamats</h2>
+      <p data-i18n="about_p1">
+        SIA <strong>Krismar Baltic</strong> ir uzticams partneris personāla risinājumu jomā. Mēs specializējamies darbinieku atlasē, nodrošinot Jūsu uzņēmumam tieši tos speciālistus, kas nepieciešami izaugsmei un attīstībai.
+      </p>
+      <p data-i18n="about_p2">
+        Mūsu misija — savienot talantīgus profesionāļus ar uzņēmumiem, kuriem viņi ir vajadzīgi. Mēs saprotam katra klienta individuālās vajadzības un piedāvājam risinājumus, kas atbilst Jūsu uzņēmuma kultūrai un mērķiem.
+      </p>
+      <div class="about__features">
+        <div class="about__feature">
+          <div class="about__feature-icon">✓</div>
+          <span data-i18n="about_f1">Individuāla pieeja katram klientam</span>
+        </div>
+        <div class="about__feature">
+          <div class="about__feature-icon">✓</div>
+          <span data-i18n="about_f2">Plaša kandidātu datubāze</span>
+        </div>
+        <div class="about__feature">
+          <div class="about__feature-icon">✓</div>
+          <span data-i18n="about_f3">Konfidencialitātes garantija</span>
+        </div>
+        <div class="about__feature">
+          <div class="about__feature-icon">✓</div>
+          <span data-i18n="about_f4">Juridiskais atbalsts</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn--primary" data-i18n="about_cta">Uzzināt vairāk</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════ -->
+<section class="services section section--gray" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="services_label">Pakalpojumi</div>
+      <h2 class="section-title" data-i18n="services_title">Ko mēs piedāvājam</h2>
+      <p class="section-sub" data-i18n="services_sub">Pilns personāla risinājumu klāsts Jūsu uzņēmumam</p>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="service-card">
+        <div class="service-card__icon">🔍</div>
+        <h3 data-i18n="srv1_title">Personāla atlase</h3>
+        <p data-i18n="srv1_text">Meklējam un atlasām kvalificētus speciālistus jebkurā nozarē — no strādniekiem līdz vadītājiem. Katrs kandidāts tiek rūpīgi pārbaudīts.</p>
+      </div>
+
+      <div class="service-card service-card--accent">
+        <div class="service-card__icon">📋</div>
+        <h3 data-i18n="srv2_title">Darbinieku noma</h3>
+        <p data-i18n="srv2_text">Elastīga personāla noma uz jebkuru laiku — sezonāli projekti, darba virsslodze vai ilgtermiņa vajadzības. Mēs nodrošinām visu dokumentāciju.</p>
+        <div class="service-card__badge" data-i18n="popular">Populārs</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">📄</div>
+        <h3 data-i18n="srv3_title">HR administrācija</h3>
+        <p data-i18n="srv3_text">Pilns HR pakalpojumu klāsts — darba līgumi, algas aprēķins, nodokļu administrēšana. Jūs koncentrējaties uz biznesu, mēs rūpējamies par dokumentiem.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">🌐</div>
+        <h3 data-i18n="srv4_title">Starptautiskā darbaspēka piesaiste</h3>
+        <p data-i18n="srv4_text">Piesaistām kvalificētus darbiniekus no ES un trešajām valstīm. Nodrošinām vīzas, darba atļaujas un integrāciju.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">🎓</div>
+        <h3 data-i18n="srv5_title">Apmācības un attīstība</h3>
+        <p data-i18n="srv5_text">Organizējam profesionālās apmācības, seminārus un kvalifikācijas paaugstināšanas kursus Jūsu darbiniekiem.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__icon">💼</div>
+        <h3 data-i18n="srv6_title">Karjeras pakalpojumi</h3>
+        <p data-i18n="srv6_text">Palīdzam darba meklētājiem atrast piemērotu darba vietu. CV konsultācijas, interviju sagatavošana un karjeras plānošana.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BENEFITS
+═══════════════════════════════════════════ -->
+<section class="benefits section" id="benefits">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="ben_label">Priekšrocības</div>
+      <h2 class="section-title" data-i18n="ben_title">Kāpēc izvēlēties Krismar Baltic?</h2>
+    </div>
+    <div class="benefits__grid">
+      <div class="benefit">
+        <div class="benefit__num">01</div>
+        <h4 data-i18n="ben1_title">Ātrums</h4>
+        <p data-i18n="ben1_text">Pirmie piemērotie kandidāti — 48 stundu laikā. Ārkārtas gadījumos — 24h.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__num">02</div>
+        <h4 data-i18n="ben2_title">Kvalitāte</h4>
+        <p data-i18n="ben2_text">Katrs kandidāts iziet daudzpakāpju pārbaudi — kompetences tests, atsauces, fona pārbaude.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__num">03</div>
+        <h4 data-i18n="ben3_title">Garantija</h4>
+        <p data-i18n="ben3_text">Ja darbinieks neatbilst — bezmaksas aizstāšana 3 mēnešu laikā bez papildu izmaksām.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__num">04</div>
+        <h4 data-i18n="ben4_title">Elastība</h4>
+        <p data-i18n="ben4_text">Pielāgojamies Jūsu vajadzībām — 1 darbinieks vai 100, uz nedēļu vai gadiem.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__num">05</div>
+        <h4 data-i18n="ben5_title">Juridiskā drošība</h4>
+        <p data-i18n="ben5_text">Visa dokumentācija atbilst Latvijas darba tiesībām. Mēs uzņemamies juridisko atbildību.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit__num">06</div>
+        <h4 data-i18n="ben6_title">Personīgais menedžeris</h4>
+        <p data-i18n="ben6_text">Katram klientam — viens kontaktpersona. Jūs vienmēr zināt, ar ko sazināties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BANNER PHOTO
+═══════════════════════════════════════════ -->
+<div class="banner-photo">
+  <img
+    src="banner.jpg"
+    alt="Krismar Baltic"
+    class="banner-photo__img"
+    onerror="this.parentElement.style.display='none'"
+  />
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PROCESS
+═══════════════════════════════════════════ -->
+<section class="process section section--gray" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="proc_label">Kā mēs strādājam</div>
+      <h2 class="section-title" data-i18n="proc_title">4 soļi līdz ideālam darbiniekam</h2>
+    </div>
+    <div class="process__steps">
+      <div class="process__step">
+        <div class="process__step-num">1</div>
+        <div class="process__step-content">
+          <h4 data-i18n="step1_title">Konsultācija</h4>
+          <p data-i18n="step1_text">Analizējam Jūsu vajadzības, uzņēmuma kultūru un prasības. Sagatvojam detalizētu vakances profilu.</p>
+        </div>
+      </div>
+      <div class="process__connector"></div>
+      <div class="process__step process__step--geo">
+        <div class="process__step-num">2</div>
+        <div class="process__step-content">
+          <h4 data-i18n="step2_title">Meklēšana</h4>
+          <p data-i18n="step2_text">Izmantojam mūsu datubāzi, profesionālos tīklus un aktīvo meklēšanu, lai atrastu labākos kandidātus.</p>
+          <div class="geo-badge">
+            <span>🌍</span>
+            <span data-i18n="geo_badge">10 valstis · savi centri</span>
+          </div>
+        </div>
+        <!-- Всплывающая подсказка -->
+        <div class="geo-tooltip">
+          <div class="geo-tooltip__title" data-i18n="geo_title">Mūsu un partneru rekrutēšanas centri</div>
+          <ul class="geo-tooltip__list">
+            <li>🇦🇪 <span data-i18n="geo_ae">Apvienotie Arābu Emirāti</span></li>
+            <li>🇧🇩 <span data-i18n="geo_bd">Bangladeša</span></li>
+            <li>🇮🇳 <span data-i18n="geo_in">Indija</span></li>
+            <li>🇶🇦 <span data-i18n="geo_qa">Katara</span></li>
+            <li>🇰🇿 <span data-i18n="geo_kz">Kazahstāna</span></li>
+            <li>🇰🇪 <span data-i18n="geo_ke">Kenija</span></li>
+            <li>🇳🇵 <span data-i18n="geo_np">Nepāla</span></li>
+            <li>🇵🇱 <span data-i18n="geo_pl">Polija</span></li>
+            <li>🇸🇬 <span data-i18n="geo_sg">Singapūra</span></li>
+            <li>🇺🇿 <span data-i18n="geo_uz">Uzbekistāna</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="process__connector"></div>
+      <div class="process__step">
+        <div class="process__step-num">3</div>
+        <div class="process__step-content">
+          <h4 data-i18n="step3_title">Atlase</h4>
+          <p data-i18n="step3_text">Intervijām, testēšanai un atsauču pārbaudei pakļaujam tikai labākos. Jums prezentējam gala sarakstu.</p>
+        </div>
+      </div>
+      <div class="process__connector"></div>
+      <div class="process__step">
+        <div class="process__step-num">4</div>
+        <div class="process__step-content">
+          <h4 data-i18n="step4_title">Integrācija</h4>
+          <p data-i18n="step4_text">Noformējam dokumentus, atbalstām onboarding procesu un sekojam līdzi pirmajos 3 mēnešos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     INDUSTRIES
+═══════════════════════════════════════════ -->
+<section class="industries section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="ind_label">Nozares</div>
+      <h2 class="section-title" data-i18n="ind_title">Strādājam visās nozarēs</h2>
+    </div>
+    <div class="industries__grid">
+      <div class="industry-tag">🏭 <span data-i18n="ind1">Ražošana</span></div>
+      <div class="industry-tag">🚚 <span data-i18n="ind2">Loģistika & transports</span></div>
+      <div class="industry-tag">🏗️ <span data-i18n="ind3">Būvniecība</span></div>
+      <div class="industry-tag">🛒 <span data-i18n="ind4">Tirdzniecība & retail</span></div>
+      <div class="industry-tag">🏨 <span data-i18n="ind5">Viesnīcas & restorāni</span></div>
+      <div class="industry-tag">🌾 <span data-i18n="ind8">Lauksaimniecība</span></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════ -->
+<section class="contact section section--dark" id="contact">
+  <div class="container contact__inner">
+    <div class="contact__info">
+      <div class="section-label section-label--light" data-i18n="con_label">Sazināties</div>
+      <h2 class="section-title section-title--light" data-i18n="con_title">Sāciet sadarbību šodien</h2>
+      <p class="contact__sub" data-i18n="con_sub">Atstājiet pieteikumu un mūsu speciālists sazināsies ar Jums 2 stundu laikā</p>
+
+      <div class="contact__details">
+        <div class="contact__detail">
+          <div class="contact__detail-icon">📍</div>
+          <div>
+            <strong data-i18n="con_addr_label">Adrese</strong>
+            <span>Brīvības iela 76 - 34, LV-1001, Rīga</span>
+          </div>
+        </div>
+        <div class="contact__detail">
+          <div class="contact__detail-icon">📞</div>
+          <div>
+            <strong data-i18n="con_phone_label">Telefons</strong>
+            <a href="tel:+37120768001">+371 20 768 001</a><br/>
+            <a href="tel:+37120768005">+371 20 768 005</a>
+          </div>
+        </div>
+        <div class="contact__detail">
+          <div class="contact__detail-icon">✉️</div>
+          <div>
+            <strong data-i18n="con_email_label">E-pasts</strong>
+            <a href="mailto:office@krismar-latvia.eu">office@krismar-latvia.eu</a>
+          </div>
+        </div>
+        <div class="contact__detail">
+          <div class="contact__detail-icon">🕐</div>
+          <div>
+            <strong data-i18n="con_hours_label">Darba laiks</strong>
+            <span data-i18n="con_hours">Pr–Pk: 9:00–18:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact__form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="form_name">Vārds, Uzvārds *</label>
+          <input type="text" name="name" required placeholder="..." data-ph="form_name_ph" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_company">Uzņēmums</label>
+          <input type="text" name="company" placeholder="..." data-ph="form_company_ph" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label data-i18n="form_email">E-pasts *</label>
+          <input type="email" name="email" required placeholder="jūs@uznemums.lv" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_phone">Telefons</label>
+          <input type="tel" name="phone" placeholder="+371" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_service">Pakalpojums *</label>
+        <select name="service" required>
+          <option value="" data-i18n="form_select_default">Izvēlieties pakalpojumu...</option>
+          <option data-i18n="srv1_title">Personāla atlase</option>
+          <option data-i18n="srv2_title">Darbinieku noma</option>
+          <option data-i18n="srv3_title">HR administrācija</option>
+          <option data-i18n="srv4_title">Starptautiskā darbaspēka piesaiste</option>
+          <option data-i18n="srv6_title">Karjeras pakalpojumi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-i18n="form_msg">Ziņojums</label>
+        <textarea name="message" rows="4" placeholder="..." data-ph="form_msg_ph"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--full" data-i18n="form_submit">Nosūtīt pieteikumu</button>
+      <p class="form-note" data-i18n="form_note">* Obligātie lauki. Jūsu dati tiek apstrādāti konfidenciāli.</p>
+      <div class="form-success" id="formSuccess">
+        <span>✓</span> <span data-i18n="form_ok">Paldies! Mēs sazināsimies ar Jums tuvākajā laikā.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="#hero" class="logo logo--footer">
+        <img src="logo.png" alt="Krismar Baltic" class="logo__img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="logo__text" style="display:none;">
+          <span class="logo__k">KB</span>
+          <span class="logo__name">Krismar Baltic</span>
+        </span>
+      </a>
+      <p data-i18n="footer_desc">Profesionāla personāla atlase un darbinieku noma Latvijā un Eiropā.</p>
+    </div>
+    <div class="footer__links">
+      <h5 data-i18n="footer_nav">Navigācija</h5>
+      <a href="#about"    data-i18n="nav_about">Par mums</a>
+      <a href="#services" data-i18n="nav_services">Pakalpojumi</a>
+      <a href="#benefits" data-i18n="nav_benefits">Priekšrocības</a>
+      <a href="#process"  data-i18n="nav_process">Process</a>
+      <a href="#contact"  data-i18n="nav_contact">Sazināties</a>
+    </div>
+    <div class="footer__links">
+      <h5 data-i18n="footer_services">Pakalpojumi</h5>
+      <a href="#services" data-i18n="srv1_title">Personāla atlase</a>
+      <a href="#services" data-i18n="srv2_title">Darbinieku noma</a>
+      <a href="#services" data-i18n="srv3_title">HR administrācija</a>
+      <a href="#services" data-i18n="srv6_title">Karjeras pakalpojumi</a>
+    </div>
+    <div class="footer__contact">
+      <h5 data-i18n="footer_contacts">Kontakti</h5>
+      <p>📍 Brīvības iela 76 - 34, LV-1001, Rīga</p>
+      <p><a href="tel:+37120768001">📞 +371 20 768 001</a></p>
+      <p><a href="tel:+37120768005">📞 +371 20 768 005</a></p>
+      <p><a href="mailto:office@krismar-latvia.eu">✉️ office@krismar-latvia.eu</a></p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <span>© 2025 SIA Krismar Baltic. <span data-i18n="footer_rights">Visas tiesības aizsargātas.</span></span>
+      <div class="lang-switcher lang-switcher--footer">
+        <button class="lang-btn active" data-lang="lv">LV</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#contact" class="fab" title="Sazināties">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+</a>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
