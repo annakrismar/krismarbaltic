@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>if(localStorage.getItem('cookieAccepted')){document.write('<style>#cookieOverlay{display:none!important}</style>');}</script>
 </head>
 <body>
 
@@ -495,9 +496,11 @@
     <div class="cookie-popup__icon">🍪</div>
     <h2 class="cookie-popup__title" data-i18n="cookie_title">Privātums un sīkdatnes</h2>
     <p class="cookie-popup__text" data-i18n="cookie_text">Mēs apstrādājam Jūsu datus, lai nodrošinātu vietnes darbību un apstrādātu pieteikumus. Turpinot lietot vietni, Jūs piekrītat mūsu Privātuma politikai.</p>
+    <p class="cookie-popup__text" style="font-size:.82rem;margin-top:-10px;">
+      <a href="privacy.html" target="_blank" style="color:var(--gold);text-decoration:underline;" data-i18n="cookie_more">Uzzināt vairāk</a>
+    </p>
     <div class="cookie-popup__actions">
-      <a href="privacy.html" target="_blank" class="cookie-btn cookie-btn--outline" data-i18n="cookie_more">Uzzināt vairāk</a>
-      <button class="cookie-btn cookie-btn--accept" id="cookieAccept" data-i18n="cookie_accept">Piekrītu</button>
+      <button class="cookie-btn cookie-btn--accept" onclick="(function(){localStorage.setItem('cookieAccepted','1');var o=document.getElementById('cookieOverlay');o.classList.add('hidden');setTimeout(function(){o.style.display='none'},500);})()" data-i18n="cookie_accept">Piekrītu</button>
     </div>
     <p class="cookie-popup__note">SIA Krismar Baltic · Reģ. Nr. 40203640978</p>
   </div>
