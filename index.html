@@ -420,6 +420,12 @@
         <label data-i18n="form_msg">Ziņojums</label>
         <textarea name="message" rows="4" placeholder="..." data-ph="form_msg_ph"></textarea>
       </div>
+      <div class="form-group form-group--consent">
+        <label class="consent-label">
+          <input type="checkbox" name="consent" required />
+          <span data-i18n="form_consent">Esmu iepazinies ar <a href="privacy.html" target="_blank">Privātuma politiku</a> un piekrītu savu datu apstrādei.</span>
+        </label>
+      </div>
       <button type="submit" class="btn btn--primary btn--full" data-i18n="form_submit">Nosūtīt pieteikumu</button>
       <p class="form-note" data-i18n="form_note">* Obligātie lauki. Jūsu dati tiek apstrādāti konfidenciāli.</p>
       <div class="form-success" id="formSuccess">
@@ -470,7 +476,7 @@
   </div>
   <div class="footer__bottom">
     <div class="container">
-      <span>© 2025 SIA Krismar Baltic. <span data-i18n="footer_rights">Visas tiesības aizsargātas.</span></span>
+      <span>© 2025 SIA Krismar Baltic. <span data-i18n="footer_rights">Visas tiesības aizsargātas.</span> · <a href="privacy.html" style="color:inherit;opacity:.7;" data-i18n="footer_privacy">Privātuma politika</a></span>
       <div class="lang-switcher lang-switcher--footer">
         <button class="lang-btn active" data-lang="lv">LV</button>
         <button class="lang-btn" data-lang="en">EN</button>
