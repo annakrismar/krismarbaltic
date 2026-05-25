@@ -147,17 +147,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Cookie Consent Banner ── */
-  const cookieBanner = document.getElementById('cookieBanner');
-  const cookieAccept = document.getElementById('cookieAccept');
-  if (cookieBanner && !localStorage.getItem('cookieAccepted')) {
-    setTimeout(() => cookieBanner.classList.add('visible'), 800);
-  }
-  if (cookieAccept) {
-    cookieAccept.addEventListener('click', () => {
-      localStorage.setItem('cookieAccepted', '1');
-      cookieBanner.classList.remove('visible');
-    });
+  /* ── Cookie Consent Popup ── */
+  const cookieOverlay = document.getElementById('cookieOverlay');
+  const cookieAccept  = document.getElementById('cookieAccept');
+  if (cookieOverlay) {
+    if (localStorage.getItem('cookieAccepted')) {
+      cookieOverlay.style.display = 'none';
+    }
+    if (cookieAccept) {
+      cookieAccept.addEventListener('click', () => {
+        localStorage.setItem('cookieAccepted', '1');
+        cookieOverlay.classList.add('hidden');
+        setTimeout(() => cookieOverlay.style.display = 'none', 500);
+      });
+    }
   }
 
   /* ── Smooth scroll for all anchor links ── */
