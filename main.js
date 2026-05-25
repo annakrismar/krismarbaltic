@@ -180,13 +180,37 @@ document.addEventListener('DOMContentLoaded', () => {
 function cookieLang(lang, btn) {
   document.querySelectorAll('.cookie-lang-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  if (window.translations && window.translations[lang]) {
-    const t = window.translations[lang];
-    const popup = document.getElementById('cookieOverlay');
-    if (!popup) return;
-    popup.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (t[key]) el.textContent = t[key].replace(/<[^>]*>/g, '');
-    });
-  }
+
+  var texts = {
+    lv: {
+      cookie_title: 'PRIVĀTUMS UN SĪKDATNES',
+      cookie_text:  'Mēs apstrādājam Jūsu datus, lai nodrošinātu vietnes darbību un apstrādātu pieteikumus. Turpinot lietot vietni, Jūs piekrītat mūsu Privātuma politikai.',
+      cookie_accept: 'PIEKRĪTU',
+      cookie_reject: 'NORAIDĪT VISU',
+      cookie_more:   'Privātuma politika'
+    },
+    en: {
+      cookie_title: 'PRIVACY & COOKIES',
+      cookie_text:  'We process your data to ensure website functionality and handle enquiries. By continuing to use this site, you agree to our Privacy Policy.',
+      cookie_accept: 'ACCEPT',
+      cookie_reject: 'REJECT ALL',
+      cookie_more:   'Privacy Policy'
+    },
+    ru: {
+      cookie_title: 'КОНФИДЕНЦИАЛЬНОСТЬ И COOKIES',
+      cookie_text:  'Мы обрабатываем ваши данные для обеспечения работы сайта и обработки заявок. Продолжая использовать сайт, вы соглашаетесь с нашей Политикой конфиденциальности.',
+      cookie_accept: 'ПРИНЯТЬ',
+      cookie_reject: 'ОТКЛОНИТЬ ВСЁ',
+      cookie_more:   'Политика конфиденциальности'
+    }
+  };
+
+  var t = texts[lang];
+  if (!t) return;
+  var popup = document.getElementById('cookieOverlay');
+  if (!popup) return;
+  popup.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
 }
