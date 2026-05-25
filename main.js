@@ -175,3 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+/* ── Cookie popup language switcher ── */
+function cookieLang(lang, btn) {
+  document.querySelectorAll('.cookie-lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (window.translations && window.translations[lang]) {
+    const t = window.translations[lang];
+    const popup = document.getElementById('cookieOverlay');
+    if (!popup) return;
+    popup.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) el.textContent = t[key].replace(/<[^>]*>/g, '');
+    });
+  }
+}
