@@ -10,7 +10,11 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(sed -i 's/cookie_accept: \"Piekrītu\",/cookie_accept: \"Piekrītu\",\\\\n    cookie_reject: \"Noraidīt visu\",/' i18n.js)",
-      "Bash(sed -i 's/cookie_accept: \"Принять\",/cookie_accept: \"Принять\",\\\\n    cookie_reject: \"Отклонить всё\",/' i18n.js)"
+      "Bash(sed -i 's/cookie_accept: \"Принять\",/cookie_accept: \"Принять\",\\\\n    cookie_reject: \"Отклонить всё\",/' i18n.js)",
+      "Bash(dir *.jpg *.png *.jpeg *.webp)",
+      "Bash(python -c ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(py -c ' *)"
     ]
   }
 }
