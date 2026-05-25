@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script>if(localStorage.getItem('cookieAccepted')){document.write('<style>#cookieOverlay{display:none!important}</style>');}</script>
+  <script>try{if(localStorage.getItem('cookieAccepted')){document.write('<style>#cookieOverlay{display:none!important}</style>');}}catch(e){}</script>
 </head>
 <body>
 
@@ -502,13 +502,11 @@
 
     <p class="cookie-popup__text" data-i18n="cookie_text">Mēs apstrādājam Jūsu datus, lai nodrošinātu vietnes darbību un apstrādātu pieteikumus. Turpinot lietot vietni, Jūs piekrītat mūsu Privātuma politikai.</p>
     <div class="cookie-popup__actions">
-      <button class="cookie-bar cookie-bar--accept"
-        onclick="(function(){localStorage.setItem('cookieAccepted','1');var o=document.getElementById('cookieOverlay');o.classList.add('hidden');setTimeout(function(){o.style.display='none'},500);})()">
+      <button class="cookie-bar cookie-bar--accept" onclick="cookieAcceptFn()">
         <span data-i18n="cookie_accept">PIEKRĪTU</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
-      <button class="cookie-bar cookie-bar--reject"
-        onclick="(function(){localStorage.setItem('cookieAccepted','1');var o=document.getElementById('cookieOverlay');o.classList.add('hidden');setTimeout(function(){o.style.display='none'},500);})()">
+      <button class="cookie-bar cookie-bar--reject" onclick="cookieAcceptFn()">
         <span data-i18n="cookie_reject">NORAIDĪT VISU</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>

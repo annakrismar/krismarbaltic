@@ -436,53 +436,55 @@ const translations = {
   }
 };
 
-let currentLang = 'lv';
+var currentLang = 'lv';
 
 function applyLang(lang) {
   currentLang = lang;
-  const t = translations[lang];
+  var t = translations[lang];
+  if (!t) return;
 
   // Update <html lang>
   document.documentElement.lang = lang;
 
   // Text nodes
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
     if (t[key] !== undefined) {
       el.innerHTML = t[key];
     }
   });
 
   // Placeholders
-  document.querySelectorAll('[data-ph]').forEach(el => {
-    const key = el.getAttribute('data-ph');
+  document.querySelectorAll('[data-ph]').forEach(function(el) {
+    var key = el.getAttribute('data-ph');
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 
   // Lang buttons active state
-  document.querySelectorAll('.lang-btn').forEach(btn => {
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      localStorage.setItem('siteLang', btn.dataset.lang);
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      try { localStorage.setItem('siteLang', btn.dataset.lang); } catch(e) {}
       applyLang(btn.dataset.lang);
     });
   });
 
   // Auto-detect language: saved preference → browser language → default LV
-  const saved = localStorage.getItem('siteLang');
+  var saved = null;
+  try { saved = localStorage.getItem('siteLang'); } catch(e) {}
   if (saved && translations[saved]) {
     applyLang(saved);
   } else {
-    const browser = (navigator.language || navigator.userLanguage || 'lv').toLowerCase();
-    let detected = 'lv';
-    if (browser.startsWith('ru')) detected = 'ru';
-    else if (browser.startsWith('en')) detected = 'en';
-    else if (browser.startsWith('lv')) detected = 'lv';
+    var browser = ((navigator.language || navigator.userLanguage) || 'lv').toLowerCase();
+    var detected = 'lv';
+    if (browser.indexOf('ru') === 0) detected = 'ru';
+    else if (browser.indexOf('en') === 0) detected = 'en';
+    else if (browser.indexOf('lv') === 0) detected = 'lv';
     applyLang(detected);
   }
 });
