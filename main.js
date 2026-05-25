@@ -117,19 +117,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   const successMsg = document.getElementById('formSuccess');
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');
       btn.disabled = true;
       btn.textContent = '...';
-      setTimeout(() => {
-        form.reset();
-        btn.disabled = false;
-        const t = window.translations && window.translations[window.currentLang];
-        btn.textContent = t ? t.form_submit : 'Nosūtīt pieteikumu';
-        successMsg.classList.add('visible');
-        setTimeout(() => successMsg.classList.remove('visible'), 5000);
-      }, 900);
+
+      try {
+        const response = await fetch('https://formspree.io/f/mvzybjly', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMsg.classList.add('visible');
+          setTimeout(() => successMsg.classList.remove('visible'), 5000);
+        } else {
+          alert('Kļūda. Lūdzu, mēģiniet vēlreiz.');
+        }
+      } catch (err) {
+        alert('Kļūda. Lūdzu, mēģiniet vēlreiz.');
+      }
+
+      btn.disabled = false;
+      const t = window.translations && window.translations[window.currentLang];
+      btn.textContent = t ? t.form_submit : 'Nosūtīt pieteikumu';
     });
   }
 
