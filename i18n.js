@@ -467,7 +467,22 @@ function applyLang(lang) {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      localStorage.setItem('siteLang', btn.dataset.lang);
+      applyLang(btn.dataset.lang);
+    });
   });
-  applyLang('lv');
+
+  // Auto-detect language: saved preference → browser language → default LV
+  const saved = localStorage.getItem('siteLang');
+  if (saved && translations[saved]) {
+    applyLang(saved);
+  } else {
+    const browser = (navigator.language || navigator.userLanguage || 'lv').toLowerCase();
+    let detected = 'lv';
+    if (browser.startsWith('ru')) detected = 'ru';
+    else if (browser.startsWith('en')) detected = 'en';
+    else if (browser.startsWith('lv')) detected = 'lv';
+    applyLang(detected);
+  }
 });
