@@ -5,7 +5,12 @@
       "Bash(where python *)",
       "Bash(where python3 *)",
       "Bash(where node *)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(sed -i 's/cookie_accept: \"Piekrītu\",/cookie_accept: \"Piekrītu\",\\\\n    cookie_reject: \"Noraidīt visu\",/' i18n.js)",
+      "Bash(sed -i 's/cookie_accept: \"Принять\",/cookie_accept: \"Принять\",\\\\n    cookie_reject: \"Отклонить всё\",/' i18n.js)"
     ]
   }
 }

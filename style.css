@@ -131,6 +131,21 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 32px;
+  justify-content: flex-end;
+}
+
+/* ── Hero large logo ── */
+.hero__logo-wrap {
+  margin-bottom: 28px;
+}
+.hero__logo-img {
+  height: 110px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,.45));
+}
+@media (max-width: 768px) {
+  .hero__logo-img { height: 80px; }
 }
 
 /* Logo */
