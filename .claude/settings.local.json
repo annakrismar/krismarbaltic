@@ -14,7 +14,12 @@
       "Bash(dir *.jpg *.png *.jpeg *.webp)",
       "Bash(python -c ' *)",
       "Bash(python3 -c ' *)",
-      "Bash(py -c ' *)"
+      "Bash(py -c ' *)",
+      "Bash(dir /b *.jpg *.jpeg *.png *.webp *.JPG *.JPEG *.PNG)",
+      "Bash(dir \"C:\\\\Users\\\\admin\\\\Desktop\\\\САЙТ\\\\krismar_baltic\" /b /s)",
+      "Bash(findstr /i \"\\\\.jpg \\\\.jpeg \\\\.png \\\\.webp\")",
+      "Bash(ls -la \"C:\\\\Users\\\\admin\\\\Desktop\\\\САЙТ\\\\krismar_baltic\\\\\")",
+      "Bash(ls \"C:\\\\Users\\\\admin\\\\Desktop\\\\\" 2>&1 | head -40)"
     ]
   }
 }
