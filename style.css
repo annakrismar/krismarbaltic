@@ -932,8 +932,6 @@ button, input, select, textarea {
 .consent-label input[type="checkbox"] { margin-top: 2px; accent-color: var(--gold); flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; }
 .consent-label a { color: var(--gold); text-decoration: underline; }
 .form-note { font-size: .78rem; color: var(--muted); margin-top: 12px; text-align: center; }
-.form-note--consent { margin-top: 6px; }
-.form-note--consent a { color: var(--gold); text-decoration: underline; }
 .form-success {
   display: none;
   align-items: center;

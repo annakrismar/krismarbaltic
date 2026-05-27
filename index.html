@@ -436,11 +436,14 @@
         <label data-i18n="form_msg">Ziņojums</label>
         <textarea name="message" rows="4" placeholder="..." data-ph="form_msg_ph"></textarea>
       </div>
+      <div class="form-group form-group--consent">
+        <label class="consent-label">
+          <input type="checkbox" name="consent" required />
+          <span data-i18n="form_consent">Esmu iepazinies ar <a href="privacy.html" target="_blank">Privātuma politiku</a> un piekrītu savu datu apstrādei.</span>
+        </label>
+      </div>
       <button type="submit" class="btn btn--primary btn--full" data-i18n="form_submit">Nosūtīt pieteikumu</button>
       <p class="form-note" data-i18n="form_note">* Obligātie lauki. Jūsu dati tiek apstrādāti konfidenciāli.</p>
-      <p class="form-note form-note--consent">
-        <span data-i18n="form_consent_note">Nosūtot pieteikumu, Jūs piekrītat mūsu </span><a href="privacy.html" target="_blank" data-i18n="footer_privacy">Privātuma politikai</a>.
-      </p>
       <div class="form-success" id="formSuccess">
         <span>✓</span> <span data-i18n="form_ok">Paldies! Mēs sazināsimies ar Jums tuvākajā laikā.</span>
       </div>
