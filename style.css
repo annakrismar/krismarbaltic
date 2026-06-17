@@ -303,9 +303,9 @@ button, input, select, textarea {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('hero-bg.jpg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center center;
   opacity: .22;
 }
 /* Градиентный оверлей поверх фото */
