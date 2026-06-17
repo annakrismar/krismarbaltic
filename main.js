@@ -244,9 +244,9 @@ function cookieLang(lang, btn) {
   if (btn) btn.classList.add('active');
 
   var texts = {
-    lv: { cookie_title: 'PRIVĀTUMS UN SĪKDATNES', cookie_text: 'Mēs apstrādājam Jūsu datus, lai nodrošinātu vietnes darbību un apstrādātu pieteikumus. Turpinot lietot vietni, Jūs piekrītat mūsu Privātuma politikai.', cookie_accept: 'PIEKRĪTU', cookie_reject: 'NORAIDĪT VISU', cookie_more: 'Privātuma politika' },
-    en: { cookie_title: 'PRIVACY & COOKIES', cookie_text: 'We process your data to ensure website functionality and handle enquiries. By continuing to use this site, you agree to our Privacy Policy.', cookie_accept: 'ACCEPT', cookie_reject: 'REJECT ALL', cookie_more: 'Privacy Policy' },
-    ru: { cookie_title: 'КОНФИДЕНЦИАЛЬНОСТЬ И COOKIES', cookie_text: 'Мы обрабатываем ваши данные для обеспечения работы сайта и обработки заявок. Продолжая использовать сайт, вы соглашаетесь с нашей Политикой конфиденциальности.', cookie_accept: 'ПРИНЯТЬ', cookie_reject: 'ОТКЛОНИТЬ ВСЁ', cookie_more: 'Политика конфиденциальности' }
+    lv: { cookie_title: 'PRIVĀTUMS UN SĪKDATNES', cookie_text: 'Mēs apstrādājam Jūsu datus, lai nodrošinātu vietnes darbību un apstrādātu pieteikumus. Turpinot lietot vietni, Jūs piekrītat mūsu <a href="privacy.html" target="_blank">Privātuma politikai</a>.', cookie_accept: 'PIEKRĪTU', cookie_reject: 'NORAIDĪT VISU', cookie_more: 'Privātuma politika' },
+    en: { cookie_title: 'PRIVACY & COOKIES', cookie_text: 'We process your data to ensure website functionality and handle enquiries. By continuing to use this site, you agree to our <a href="privacy.html" target="_blank">Privacy Policy</a>.', cookie_accept: 'ACCEPT', cookie_reject: 'REJECT ALL', cookie_more: 'Privacy Policy' },
+    ru: { cookie_title: 'КОНФИДЕНЦИАЛЬНОСТЬ И COOKIES', cookie_text: 'Мы обрабатываем ваши данные для обеспечения работы сайта и обработки заявок. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="privacy.html" target="_blank">Политикой конфиденциальности</a>.', cookie_accept: 'ПРИНЯТЬ', cookie_reject: 'ОТКЛОНИТЬ ВСЁ', cookie_more: 'Политика конфиденциальности' }
   };
 
   var t = texts[lang];
@@ -255,7 +255,7 @@ function cookieLang(lang, btn) {
     if (popup) {
       popup.querySelectorAll('[data-i18n]').forEach(function(el) {
         var key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+        if (t[key]) el.innerHTML = t[key];
       });
     }
   }
