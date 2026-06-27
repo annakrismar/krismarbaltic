@@ -306,7 +306,7 @@ button, input, select, textarea {
   background-image: url('hero-bg.jpg');
   background-size: cover;
   background-position: center center;
-  opacity: .35;
+  opacity: .5;
 }
 /* Градиентный оверлей поверх фото */
 .hero__overlay {
