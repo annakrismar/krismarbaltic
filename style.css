@@ -1142,7 +1142,8 @@ button, input, select, textarea {
 
   .hero__inner { grid-template-columns: 1fr; gap: 40px; padding: 40px 24px 80px; }
   .hero__visual { display: none; }
-  .hero__title { font-size: 1.8rem; }
+  .hero__title-main { font-size: 1.6rem !important; }
+  .hero__title-sub { font-size: 0.95rem !important; }
   .hero__stats { gap: 20px; flex-wrap: wrap; }
 
   .about__inner { grid-template-columns: 1fr; gap: 40px; }
