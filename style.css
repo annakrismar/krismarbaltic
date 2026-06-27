@@ -707,15 +707,21 @@ button, input, select, textarea {
 ═══════════════════════════════════════════ */
 .process__steps {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0;
   flex-wrap: wrap;
+  padding-top: 40px;
 }
 .process__step {
   flex: 1;
   min-width: 200px;
   text-align: center;
-  padding: 32px 16px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  position: relative;
 }
 .process__step-num {
   width: 60px; height: 60px;
@@ -727,17 +733,21 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 16px;
   box-shadow: 0 4px 16px rgba(27,45,91,.25);
   transition: var(--transition);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .process__step:hover .process__step-num {
   transform: scale(1.1);
   background: linear-gradient(135deg, var(--gold), var(--gold2));
   color: var(--navy2);
 }
-.process__step-content h4 { font-weight: 700; color: var(--navy2); margin-bottom: 8px; }
-.process__step-content p  { font-size: .88rem; color: var(--muted); }
+.process__step-content { width: 100%; }
+.process__step-content h4 { font-weight: 700; color: var(--navy2); margin-bottom: 12px; margin-top: 0; }
+.process__step-content p  { font-size: .88rem; color: var(--muted); line-height: 1.5; }
 
 /* ── Geo Badge & Tooltip ── */
 .process__step--geo { position: relative; }
