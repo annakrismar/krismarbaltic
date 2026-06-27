@@ -262,4 +262,9 @@ function cookieLang(lang, btn) {
 
   try { store.setItem('siteLang', lang); } catch(e) {}
   if (typeof applyLang === 'function') applyLang(lang);
+
+  // Also update header lang buttons
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
 }
