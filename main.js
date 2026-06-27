@@ -240,6 +240,7 @@ function cookieAcceptFn() {
 
 /* ── Cookie popup language switcher ── */
 function cookieLang(lang, btn) {
+  // Update cookie popup buttons
   document.querySelectorAll('.cookie-lang-btn').forEach(function(b) { b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 
@@ -261,10 +262,7 @@ function cookieLang(lang, btn) {
   }
 
   try { store.setItem('siteLang', lang); } catch(e) {}
-  if (typeof applyLang === 'function') applyLang(lang);
-
-  // Also update header lang buttons
-  document.querySelectorAll('.lang-btn').forEach(function(b) {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
+  if (typeof applyLang === 'function') {
+    applyLang(lang);
+  }
 }
