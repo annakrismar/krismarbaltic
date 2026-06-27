@@ -1153,7 +1153,8 @@ button, input, select, textarea {
   .benefits__grid { grid-template-columns: 1fr; gap: 0; }
   .stats__inner { grid-template-columns: repeat(2, 1fr); }
 
-  .process__steps { flex-direction: column; }
+  .process__steps { flex-direction: column; gap: 60px; padding-top: 0; }
+  .process__step { padding-top: 100px; }
   .process__connector { width: 2px; height: 32px; flex: 0 0 32px; margin: 0 auto; background: linear-gradient(180deg, var(--blue), var(--sky)); }
 
   .contact__inner { grid-template-columns: 1fr; gap: 40px; }
